@@ -1,0 +1,121 @@
+body {
+  background-image: url("../images/home-background.jpg"); /* Specify the URL of your image */
+  background-size: cover; /* Cover the entire container with the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-position: center; /* Center the image within the container */
+  background-attachment: fixed; /* Make the background fixed while scrolling */
+  background-color: #f0f0f0; /* Fallback background color */
+  margin: 0;
+  position: relative; /* Required for positioning the overlay */
+  font-family: "Inter", sans-serif;
+}
+
+body::before {
+  content: ""; /* Empty content for the pseudo-element */
+  position: absolute; /* Absolute positioning to overlay the entire body */
+  top: 0;
+  left: 0;
+  width: 100%; /* Cover the entire width */
+  height: 100%; /* Cover the entire height */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black color */
+  z-index: -1; /* Position the overlay behind the content */
+}
+
+#content {
+  position: relative; /* Position the content element */
+  z-index: 1; /* Ensure the content is above the overlay */
+  color: white; /* Maintain the original color of the text */
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin-right: 50px;
+  margin-top: 40px;
+}
+.nav-item {
+  list-style-type: none;
+  margin-left: 50px;
+  font-size: 20px;
+}
+
+.hotel-name {
+  margin-top: 25px;
+  margin-left: 30px;
+  font-size: 45px;
+}
+
+/* Remove default style from anchor tags */
+a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color from parent element */
+  transition: color 0.3s, text-decoration 0.3s; /* Add smooth transition */
+}
+
+a:hover {
+  color: #3b82f6; /* Change color on hover */
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 70px;
+}
+
+.contact-us {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.contact-us-text {
+  margin-bottom: 50px;
+}
+
+/* Media Query for screens up to 900px (tablets and smaller) */
+@media (max-width: 900px) {
+  .nav-menu {
+    margin-right: 20px;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .nav-item {
+    margin-left: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  .hotel-name {
+    font-size: 35px;
+    margin-left: 10px;
+  }
+
+  .icon-img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Media Query for screens up to 600px (mobile devices) */
+@media (max-width: 600px) {
+  .nav-menu {
+    margin-right: 20px;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .hotel-name {
+    font-size: 25px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+}
